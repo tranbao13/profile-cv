@@ -83,10 +83,10 @@ section{padding:96px 0 0}
 .tl-item{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid var(--line)}
 .tl-item:first-child{padding-top:4px}
 .tl-logo{width:56px;height:56px;border-radius:10px}
-.tl-top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.tl-top{display:flex;flex-direction:column;gap:4px}
 .tl-item h3{font:500 19px/1.35 var(--sans)}
 .tl-org{color:var(--cobalt);font-weight:500}
-.tl-date{font-size:14px;color:var(--ink-3);white-space:nowrap}
+.tl-date{font-size:14px;color:var(--ink-3)}
 .tl-item p{color:var(--ink-2);margin-top:8px;max-width:620px}
 .tl-item ul.points{margin:10px 0 0 18px;color:var(--ink-2)}
 .tl-item ul.points li{margin-top:4px}
@@ -288,3 +288,9 @@ footer :focus-visible{outline-color:#fff}
 
 /* No divider under the last item of a list (career, academic, public events, clients) */
 .tl-item:last-child,.talk:last-child,.client:last-child{border-bottom:0}
+
+/* Justified paragraphs (both edges aligned) on tablet/desktop only.
+   On phones the column is too narrow and justify creates large gaps between words. */
+@media (min-width:641px){
+  .intro-text p,.tl-item p,.project p,.talk p,.client p,.hobby p,.post-card p,.prose p{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+}
